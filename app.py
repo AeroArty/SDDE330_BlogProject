@@ -104,6 +104,34 @@ def get_blog_entry(post_id):
             return jsonify(post_id=entry[0], user_id=entry[1], title=entry[2], subtitle=entry[3], blurb=entry[4], content=entry[5], time_created=entry[6], time_updated=entry[7], is_published=entry[8]), 200
         else:
             return jsonify(error="Blog entry not found"), 404
+        
+@app.route('/blogentries/all', methods=['GET'])
+def get_blog_entries():
+    with sqlite3.connect(db_name) as conn:
+        cursor = conn.cursor()
+        
+        # Query to get all blog entries
+        cursor.execute("SELECT * FROM BlogEntry")
+        rows = cursor.fetchall()
+        
+        # Convert the query result to a list of dictionaries
+        blog_entries = []
+        for row in rows:
+            blog_entry = {
+                'post_id': row[0],
+                'user_id': row[1],
+                'title': row[2],
+                'subtitle': row[3],
+                'blurb': row[4],
+                'content': row[5],
+                'time_created': row[6],
+                'time_updated': row[7],
+                'is_published': row[8]
+            }
+            blog_entries.append(blog_entry)
+        
+        # Return the data as a JSON response
+        return jsonify(blog_entries)
 
 @app.route('/blogentries/<int:post_id>', methods=['PUT'])
 def update_blog_entry(post_id):
