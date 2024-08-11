@@ -34,3 +34,6 @@ To check that the app is running: `sudo systemctl status app`
 - Read API: API to read blog entries (single and all) works correctly. 
 - Update API: API to update blog entries works correctly. 
 - Delete API: API to delete blog entries works correctly. 
+
+Postman API Documentation:
+https://documenter.getpostman.com/view/37591410/2sA3s3HqxY
