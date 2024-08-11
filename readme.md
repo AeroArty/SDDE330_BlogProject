@@ -35,5 +35,7 @@ To check that the app is running: `sudo systemctl status app`
 - Update API: API to update blog entries works correctly. 
 - Delete API: API to delete blog entries works correctly. 
 
+API code & functionality is in `app.py`
+
 Postman API Documentation:
 https://documenter.getpostman.com/view/37591410/2sA3s3HqxY
