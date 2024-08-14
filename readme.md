@@ -6,11 +6,11 @@ Create APIs to perform CRUD operations on the Blog using the class/object model 
 
 ### App Server Installation 
 
-Static IP: 
-54.152.6.67
+Instance ID: `i-0d8d5b324b2dc42af`
 
-Server DNS:
-ec2-54-152-6-67.compute-1.amazonaws.com
+Static IP: `54.152.6.67`
+
+Server DNS: `ec2-54-152-6-67.compute-1.amazonaws.com`
 
 #### Installation: 
 - Successfully installs the app server. 
