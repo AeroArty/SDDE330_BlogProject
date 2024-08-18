@@ -3,7 +3,7 @@ import sqlite3
 from datetime import datetime
 
 app = Flask(__name__)
-db_name = 'myblogapp/myblog.db'
+db_name = 'myblog.db'
 
 def init_db():
     pass
