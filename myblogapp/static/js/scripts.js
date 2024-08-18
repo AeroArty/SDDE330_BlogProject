@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // Fetch and display all blog entries
     function fetchBlogEntries() {
-        fetch('/api/blogentries')
+        fetch('/api/blogentries/all')
             .then(response => response.json())
             .then(data => {
                 blogEntriesDiv.innerHTML = '';
