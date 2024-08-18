@@ -1,0 +1,25 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+h1 {
+    color: #333;
+}
+
+.blog-entry {
+    border: 1px solid #ddd;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.blog-entry h3 {
+    margin-top: 0;
+}
+
+form input, form textarea {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 5px;
+}

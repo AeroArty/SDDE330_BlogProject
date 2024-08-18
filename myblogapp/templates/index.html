@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Blog</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <h1>My Blog</h1>
+    
+    <div id="blog-entries"></div>
+
+    <h2>Create a New Blog Entry</h2>
+    <form id="blog-form">
+        <input type="text" id="title" placeholder="Title" required><br>
+        <input type="text" id="subtitle" placeholder="Subtitle"><br>
+        <input type="text" id="blurb" placeholder="Blurb" required><br>
+        <textarea id="content" placeholder="Content" required></textarea><br>
+        <input type="submit" value="Create Post">
+    </form>
+
+    <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+</body>
+</html>
