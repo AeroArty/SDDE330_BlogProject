@@ -45,3 +45,23 @@ API code & functionality is in `app.py`
 
 Postman API Documentation:
 https://documenter.getpostman.com/view/37591410/2sA3s3HqxY
+
+### Front End UX/UI Setup
+Flask was used to serve the HTML/Javascript page to access the blog. 
+
+First the project files were reorganized under the following directory structure in the home directory of the EC2 instance
+```
+myblogapp/
+│
+├── static/
+│   ├── css/
+│   │   └── styles.css
+│   └── js/
+│       └── scripts.js
+│
+├── templates/
+│   └── index.html
+│
+├── app.py
+└── req.txt
+```
