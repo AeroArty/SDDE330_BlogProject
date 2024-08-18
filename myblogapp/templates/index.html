@@ -20,6 +20,17 @@
         <input type="submit" value="Create Post">
     </form>
 
+    <h2>Update Blog Entry</h2>
+    <form id="update-form" style="display:none;">
+        <input type="hidden" id="update-post-id">
+        <input type="text" id="update-title" placeholder="Title" required><br>
+        <input type="text" id="update-subtitle" placeholder="Subtitle"><br>
+        <input type="text" id="update-blurb" placeholder="Blurb" required><br>
+        <textarea id="update-content" placeholder="Content" required></textarea><br>
+        <input type="submit" value="Update Post">
+        <button type="button" id="cancel-update">Cancel</button>
+    </form>
+
     <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
 </body>
 </html>

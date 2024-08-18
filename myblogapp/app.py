@@ -1,4 +1,4 @@
-from flask import Flask, request, jsonify
+from flask import Flask, request, jsonify, render_template
 import sqlite3
 from datetime import datetime
 
@@ -76,7 +76,7 @@ def delete_author(user_id):
         else:
             return jsonify(error="Author not found"), 404
 
-@app.route('/blogentries', methods=['POST'])
+@app.route('/api/blogentries/', methods=['POST'])
 def create_blog_entry():
     data = request.get_json()
     user_id = data.get('user_id')
@@ -98,7 +98,7 @@ def create_blog_entry():
         post_id = cursor.lastrowid
         return jsonify(post_id=post_id, user_id=user_id, title=title, subtitle=subtitle, blurb=blurb, content=content, is_published=is_published, time_created=time_created), 201
 
-@app.route('/blogentries/<int:post_id>', methods=['GET'])
+@app.route('/api/blogentries/<int:post_id>', methods=['GET'])
 def get_blog_entry(post_id):
     with sqlite3.connect(db_name) as conn:
         cursor = conn.cursor()
@@ -109,7 +109,7 @@ def get_blog_entry(post_id):
         else:
             return jsonify(error="Blog entry not found"), 404
         
-@app.route('/blogentries/all', methods=['GET'])
+@app.route('/api/blogentries/all', methods=['GET'])
 def get_blog_entries():
     with sqlite3.connect(db_name) as conn:
         cursor = conn.cursor()
@@ -137,7 +137,7 @@ def get_blog_entries():
         # Return the data as a JSON response
         return jsonify(blog_entries)
 
-@app.route('/blogentries/<int:post_id>', methods=['PUT'])
+@app.route('/api/blogentries/<int:post_id>', methods=['PUT'])
 def update_blog_entry(post_id):
     data = request.get_json()
     title = data.get('title')
@@ -159,7 +159,7 @@ def update_blog_entry(post_id):
         else:
             return jsonify(error="Blog entry not found"), 404
 
-@app.route('/blogentries/<int:post_id>', methods=['DELETE'])
+@app.route('/api/blogentries/<int:post_id>', methods=['DELETE'])
 def delete_blog_entry(post_id):
     with sqlite3.connect(db_name) as conn:
         cursor = conn.cursor()
