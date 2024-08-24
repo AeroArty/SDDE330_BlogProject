@@ -1,7 +1,7 @@
 from flask import Flask, request, jsonify, render_template
 import sqlite3
 from datetime import datetime
-import myblogapp.bloglog as bloglog
+import bloglog as bloglog
 
 app = Flask(__name__)
 db_name = 'myblog.db'
@@ -11,7 +11,7 @@ def init_db():
     pass
 
 def write_log(response, msg):
-    bloglogger = bloglog()
+    bloglogger = bloglog.BlogLog()
     bloglogger.log_api_call(request.method, request.path, response, msg)
 
 @app.route('/')

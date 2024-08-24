@@ -1,0 +1,8 @@
+2024-08-24 22:36:32,730 - INFO - API Call - Method: GET, Endpoint: /, Status Code: 200, Message: index called
+2024-08-24 22:36:33,134 - INFO - API Call - Method: GET, Endpoint: /api/blogentries/all, Status Code: 999, Message: get_blog_entries()
+2024-08-24 22:36:40,279 - INFO - API Call - Method: GET, Endpoint: /api/blogentries/1, Status Code: 200, Message: get_blog_entry({post_id}))
+2024-08-24 22:36:46,685 - INFO - API Call - Method: PUT, Endpoint: /api/blogentries/1, Status Code: 200, Message: update_blog_entry({post_id})
+2024-08-24 22:36:46,852 - INFO - API Call - Method: GET, Endpoint: /api/blogentries/all, Status Code: 999, Message: get_blog_entries()
+2024-08-24 22:36:50,859 - INFO - API Call - Method: GET, Endpoint: /api/blogentries/8, Status Code: 200, Message: get_blog_entry({post_id}))
+2024-08-24 22:36:57,920 - INFO - API Call - Method: PUT, Endpoint: /api/blogentries/8, Status Code: 200, Message: update_blog_entry({post_id})
+2024-08-24 22:36:58,090 - INFO - API Call - Method: GET, Endpoint: /api/blogentries/all, Status Code: 999, Message: get_blog_entries()
