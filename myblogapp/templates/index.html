@@ -8,10 +8,11 @@
 </head>
 <body>
     <h1>My Blog</h1>
-    
+
+    <!-- Section to display all blog entries -->
     <div id="blog-entries"></div>
 
-    
+    <!-- Form to create a new blog entry -->
     <form id="blog-form">
         <h2>Create a New Blog Entry</h2>
         <input type="text" id="title" placeholder="Title" required><br>
@@ -21,7 +22,7 @@
         <input type="submit" value="Create Post">
     </form>
 
-    
+    <!-- Form to update an existing blog entry -->
     <form id="update-form" style="display:none;">
         <h2>Update Blog Entry</h2>
         <input type="hidden" id="update-post-id">
@@ -32,6 +33,21 @@
         <input type="submit" value="Update Post">
         <button type="button" id="cancel-update">Cancel</button>
     </form>
+
+    <!-- Form to fetch a specific blog entry by its ID -->
+    <form id="fetch-blog-form">
+        <h2>Fetch Blog Entry by ID</h2>
+        <input type="number" id="fetch-blog-id" placeholder="Enter Blog ID" required><br>
+        <input type="submit" value="Fetch Blog Entry">
+    </form>
+
+    <!-- Section to display the fetched blog entry -->
+    <div id="specific-blog-entry" style="display:none;">
+        <h3 id="specific-title"></h3>
+        <h4 id="specific-subtitle"></h4>
+        <p id="specific-blurb"></p>
+        <p id="specific-content"></p>
+    </div>
 
     <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
 </body>

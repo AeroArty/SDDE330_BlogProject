@@ -3,6 +3,8 @@ document.addEventListener('DOMContentLoaded', function () {
     const blogForm = document.getElementById('blog-form');
     const updateForm = document.getElementById('update-form');
     const cancelUpdateButton = document.getElementById('cancel-update');
+    const fetchBlogForm = document.getElementById('fetch-blog-form');
+    const specificBlogEntryDiv = document.getElementById('specific-blog-entry');
 
     // Fetch and display all blog entries
     function fetchBlogEntries() {
@@ -121,6 +123,34 @@ document.addEventListener('DOMContentLoaded', function () {
         })
         .catch(error => console.error('Error:', error));
     };
+
+    // Fetch a specific blog entry by its ID
+    fetchBlogForm.addEventListener('submit', function (event) {
+        event.preventDefault();
+        const blogId = document.getElementById('fetch-blog-id').value;
+
+        // Fetch the blog entry by its ID
+        fetch(`/api/blogentries/${blogId}`)
+            .then(response => {
+                if (response.ok) {
+                    return response.json();
+                } else {
+                    throw new Error("Blog entry not found.");
+                }
+            })
+            .then(data => {
+                // Display the specific blog entry
+                document.getElementById('specific-title').innerText = data.title;
+                document.getElementById('specific-subtitle').innerText = data.subtitle;
+                document.getElementById('specific-blurb').innerText = data.blurb;
+                document.getElementById('specific-content').innerText = data.content;
+                specificBlogEntryDiv.style.display = 'block';
+            })
+            .catch(error => {
+                alert(error.message);
+                specificBlogEntryDiv.style.display = 'none';
+            });
+    });
 
     // Fetch blog entries on load
     fetchBlogEntries();
